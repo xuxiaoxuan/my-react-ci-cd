@@ -4,7 +4,7 @@ import { increment, decrement, incrementByAmount } from '../store/reduxStore.ts'
 
 const ReduxCounter: React.FC = () => {
   const dispatch = useDispatch()
-  const count = useSelector((state: any) => state.counter.value)
+  const count = useSelector((state: { counter: { value: number } }) => state.counter.value)
 
   return (
     <div className="card">

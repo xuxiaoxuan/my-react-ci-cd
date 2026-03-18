@@ -9,9 +9,9 @@ interface Cell {
 
 const ReduxForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const cells = useSelector((state: any) => state.cell.cells)
-  const selectedCellIds = useSelector((state: any) => state.cell.selectedCellIds)
-  const loading = useSelector((state: any) => state.cell.loading)
+  const cells = useSelector((state: { cell: { cells: Record<string, Cell> } }) => state.cell.cells)
+  const selectedCellIds = useSelector((state: { cell: { selectedCellIds: string[] } }) => state.cell.selectedCellIds)
+  const loading = useSelector((state: { cell: { loading: boolean } }) => state.cell.loading)
   const [selectedRange, setSelectedRange] = useState<{ start: number; end: number }>({ start: 0, end: 0 })
 
   // 初始化100个单元格

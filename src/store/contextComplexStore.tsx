@@ -60,7 +60,7 @@ const cellReducer = (state: CellState, action: CellAction): CellState => {
     case 'BATCH_INCREMENT_START':
       // 开始批量更新，设置loading为true
       return { ...state, loading: true }
-    case 'BATCH_INCREMENT_SUCCESS':
+    case 'BATCH_INCREMENT_SUCCESS': {
       // 批量更新成功
       const { selectedIds, amount } = action.payload
       const updatedCells = { ...state.cells }  // 创建cells的浅拷贝
@@ -74,6 +74,7 @@ const cellReducer = (state: CellState, action: CellAction): CellState => {
         }
       })
       return { ...state, cells: updatedCells, loading: false }  // 更新状态
+    }
     default:
       return state
   }
