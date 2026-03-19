@@ -34,7 +34,7 @@ jobs:
 
   deploy:
     needs: build  # 依赖 build 任务，只有 build 成功才会执行
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # 部署任务在 Ubuntu 最新版本上运行
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')  # 只在主分支推送时部署
 
     steps:
