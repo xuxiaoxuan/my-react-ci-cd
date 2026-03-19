@@ -1,11 +1,11 @@
 import React, { createContext, useState, useContext } from 'react'
 
-// interface CounterContextType {
-//   value: number
-//   increment: () => void
-//   decrement: () => void
-//   incrementByAmount: (amount: number) => void
-// }
+interface CounterContextType {
+  value: number
+  increment: () => void
+  decrement: () => void
+  incrementByAmount: (amount: number) => void
+}
 
 // 创建 Context,创建上下文
 const CounterContext = createContext<CounterContextType | undefined>(undefined)
